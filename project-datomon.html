@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datomon Mobil Uygulaması - Talha Zengin</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="tear-overlay"></div>
+    <div class="cursor"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit;" class="logo-link">
+                <span class="logo-text">Talha Zengin.</span><span class="typewriter-cursor">_</span>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html#work" class="btn btn-primary nav-link" style="margin: 0; padding: 0.5rem 1.5rem; font-size: 0.9rem;">&lt; Geri Dön</a>
+        </nav>
+    </header>
+
+    <main class="project-detail-page">
+        <section class="project-detail-hero" style="padding: 120px 5% 4rem 5%; max-width: 1200px; margin: 0 auto;">
+            <h1 class="hero-title glitch-text" data-text="Datomon">
+                Datomon<br>
+                <span class="accent-text">Mobil App</span>
+            </h1>
+            <div class="project-meta" style="margin-top: 2rem; font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                <span><strong>Rol:</strong> Mobil Geliştirici</span>
+                <span class="dot" style="color: var(--accent);">•</span>
+                <span><strong>Teknoloji:</strong> Flutter, Dart, Firebase, SQLite</span>
+                <span class="dot" style="color: var(--accent);">•</span>
+                <span><strong>Yıl:</strong> 2025</span>
+            </div>
+            
+            <div class="project-hero-image" style="margin-top: 4rem; width: 100%; height: 50vh; background: linear-gradient(135deg, #0052D4, #4364F7); position: relative; overflow: hidden;">
+                <div class="abstract-shape shape-1" style="position: absolute; top: -10%; right: -5%; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%; transform: rotate(15deg);"></div>
+                <div class="abstract-shape shape-2" style="position: absolute; bottom: -20%; left: 10%; width: 300px; height: 600px; background: rgba(0,0,0,0.2); transform: rotate(-35deg);"></div>
+            </div>
+        </section>
+
+        <section class="project-content about" style="padding: 4rem 5%; max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title glitch-text"><span style="color: var(--accent);">&gt;</span> overview</h2>
+            <div class="section-line" style="margin: 2rem 0; width: 100px; height: 4px; background-color: var(--text-primary);"></div>
+            <p class="about-desc">
+                Datomon, kurumsal saha çalışanları için geliştirilmiş, yüksek performanslı ve çevrimdışı çalışabilme yeteneğine sahip modern bir mobil uygulamadır. Karmaşık veri setlerini gerçek zamanlı olarak sunucularla senkronize ederken, kullanıcılara pürüzsüz ve tepkisel bir arayüz (UI) sunar. Ekrandaki her piksel ve animasyon, sahadaki operasyonel hızı artırmak üzere özel olarak tasarlandı.
+            </p>
+            
+            <br><br>
+            
+            <h2 class="section-title glitch-text"><span style="color: var(--accent);">&gt;</span> technical_architecture</h2>
+            <div class="section-line" style="margin: 2rem 0; width: 100px; height: 4px; background-color: var(--text-primary);"></div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-desc">
+                        Mimari olarak BLoC pattern kullanılarak katmanlı bir yapı inşa edildi. Bu sayede uygulamanın state yönetimi tahmin edilebilir ve test edilebilir hale getirildi. Backend iletişimi için GraphQL kullanılarak sadece ihtiyaç duyulan verilerin çekilmesi sağlandı, bu da ağ trafiğinde %40'a varan bir iyileşme getirdi.
+                    </p>
+                    <ul style="list-style-type: none; margin-top: 1.5rem; font-family: 'JetBrains Mono', monospace; padding-left: 0;">
+                        <li style="margin-bottom: 0.8rem; font-size: 1.1rem;"><span style="color: var(--accent);">[+]</span> Custom Render Object ile 60FPS listeler</li>
+                        <li style="margin-bottom: 0.8rem; font-size: 1.1rem;"><span style="color: var(--accent);">[+]</span> SQLite tabanlı offline-first senkronizasyon</li>
+                        <li style="margin-bottom: 0.8rem; font-size: 1.1rem;"><span style="color: var(--accent);">[+]</span> AES-256 tabanlı uçtan uca şifreli depolama</li>
+                        <li style="margin-bottom: 0.8rem; font-size: 1.1rem;"><span style="color: var(--accent);">[+]</span> Kapsamlı birim ve widget testleri</li>
+                    </ul>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="code-snippet-window">
+                        <div class="window-header">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <pre class="code-content"><code><span class="keyword">class</span> <span class="function">DatomonSyncEngine</span> {
+  <span class="keyword">final</span> LocalStorage <span class="variable">_storage</span>;
+  <span class="keyword">final</span> ApiClient <span class="variable">_api</span>;
+
+  <span class="keyword">Future</span>&lt;<span class="keyword">void</span>&gt; <span class="function">syncData</span>() <span class="keyword">async</span> {
+    <span class="keyword">if</span> (<span class="keyword">await</span> _hasConnection()) {
+      <span class="keyword">final</span> data = <span class="keyword">await</span> _storage.getPending();
+      <span class="keyword">await</span> _api.push(data);
+      <span class="string">print('Sync Complete');</span>
+    }
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action Footer within Main -->
+        <section style="padding: 4rem 5%; max-width: 1200px; margin: 4rem auto; text-align: center; border-top: 1px solid var(--border-color);">
+            <h2 class="section-title">Kaynak Koduna Eriş</h2>
+            <br>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                GitHub'da Görüntüle 
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <!-- Tech Stack Marquee Background -->
+        <div class="footer-marquee">
+            <div class="marquee-content">
+                <span>PYTHON</span><span class="dot">•</span>
+                <span>JAVA</span><span class="dot">•</span>
+                <span>C</span><span class="dot">•</span>
+                <span>NETWORKING</span><span class="dot">•</span>
+                <span>CYBERSECURITY</span><span class="dot">•</span>
+                <!-- Duplicate for seamless loop -->
+                <span>PYTHON</span><span class="dot">•</span>
+                <span>JAVA</span><span class="dot">•</span>
+                <span>C</span><span class="dot">•</span>
+                <span>NETWORKING</span><span class="dot">•</span>
+                <span>CYBERSECURITY</span><span class="dot">•</span>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-left">
+                <h2 class="footer-title">Birlikte inşa edelim.</h2>
+                <a href="mailto:talhazgnn@gmail.com" class="footer-email hover-glitch" data-text="talhazgnn@gmail.com">talhazgnn@gmail.com</a>
+            </div>
+
+            <div class="footer-right">
+                <div class="terminal-status">
+                    <span class="status-prefix">&gt;</span> Sistem: <span class="status-online">Çevrimiçi</span> <span class="status-blink">|</span> Projeler Derleniyor = <span class="status-error" data-text="HATA">HATA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glitch Separator & Terminal Command -->
+        <div class="footer-separator-container">
+            <div class="terminal-command">
+                <span class="cmd-user">talha@system</span>:<span class="cmd-dir">~</span>$ status --online<span class="typewriter-cursor">_</span>
+            </div>
+            <div class="glitch-separator"></div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Talha Zengin. Tüm hakları saklıdır.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/talha-zengin-668b15418/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon hover-glitch">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/talhazgnn" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon hover-glitch">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="Talha_Zengin_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="CV" class="social-icon hover-glitch">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span class="cv-text">CV</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

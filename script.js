@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let textIndex = 0;
     
     function typeWriter() {
+        if (!logoTextElement) return;
         const currentText = word.substring(0, textIndex);
         
         if (currentText.length > 6) {
@@ -265,32 +266,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Tear Navigation Effect
-    const navLinks = document.querySelectorAll('.nav-link, .footer-link, .btn-primary');
+    const navLinks = document.querySelectorAll('.nav-link, .footer-link, .btn-primary, .project-link, .logo-link');
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                e.preventDefault();
-                
-                // Prevent transition if already in the target section
-                if (targetId === currentActiveSection) {
-                    return;
-                }
+            const targetHref = link.getAttribute('href');
+            if (!targetHref || targetHref === '#') return;
 
-                const targetEl = document.querySelector(targetId);
-                if (!targetEl) return;
-                
-                // Add Tear Off class
-                document.body.classList.add('page-tearing-out');
-                
-                // Wait for the chaos to finish (400ms)
-                setTimeout(() => {
-                    // Scroll instantly while screen is black
-                    if (window.lenis) {
-                        window.lenis.scrollTo(targetEl, { immediate: true });
-                    } else {
-                        targetEl.scrollIntoView();
+            e.preventDefault();
+            
+            // Prevent transition if already in the target section
+            if (targetHref === currentActiveSection) {
+                return;
+            }
+
+            // Add Tear Off class
+            document.body.classList.add('page-tearing-out');
+            
+            // Wait for the chaos to finish (400ms)
+            setTimeout(() => {
+                if (targetHref.startsWith('#')) {
+                    // Same page anchor
+                    const targetEl = document.querySelector(targetHref);
+                    if (targetEl) {
+                        if (window.lenis) {
+                            window.lenis.scrollTo(targetEl, { immediate: true });
+                        } else {
+                            targetEl.scrollIntoView();
+                        }
                     }
                     
                     // Switch to Tear In phase
@@ -301,9 +304,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         document.body.classList.remove('page-tearing-in');
                     }, 400);
-                    
-                }, 400); // Trigger turn on after 400ms
-            }
+                } else {
+                    // Different page URL
+                    window.location.href = targetHref;
+                }
+            }, 400); // Trigger turn on after 400ms
         });
     });
 
