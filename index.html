@@ -3,223 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talha Zengin</title>
-    <link rel="icon" type="image/jpeg" href="favicon.jpg">
-    <meta name="description" content="Minimalist technical portfolio featuring a Bauhaus-inspired design, showcasing software engineering case studies.">
-    
-    <!-- Google Fonts -->
+    <title>Talha | Yazılım Mühendisi Portfolyosu</title>
+    <meta name="description" content="Sağlam mimari ve çarpıcı görsel tasarımın kesişim noktasına odaklanan bir yazılım mühendisiyim.">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
+    <!-- Professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div id="tear-overlay"></div>
-    <div class="cursor"></div>
-
-    <header class="navbar">
-        <div class="logo">
-            <span class="logo-text">Talha Zengin.</span><span class="typewriter-cursor">_</span>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">TALHA ZENGİN</span>
+                <span class="eraser"></span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">Hakkımda & Yetenekler</a>
+                <a href="#projects">Projeler</a>
+                <a href="#contact" class="btn-primary-small">İletişim</a>
+            </div>
         </div>
-        <nav class="nav-links">
-            <a href="#about" class="nav-link"><span class="nav-text" data-text="Hakkımda">Hakkımda</span></a>
-            <a href="#work" class="nav-link"><span class="nav-text" data-text="Projeler">Projeler</span></a>
-            <a href="#contact" class="nav-link"><span class="nav-text" data-text="İletişim">İletişim</span></a>
-        </nav>
-    </header>
+    </nav>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title glitch-text">
-                    Deneyimliyorum<br>
-                    Gelişiyorum<br>
-                    <span class="accent-text">Geliştiriyorum</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Yüksek performanslı web uygulamaları, çarpıcı UI/UX ve sağlam sistem mimarisinde uzmanlaşmış yazılım mühendisi.
-                </p>
-                <div class="hero-actions">
-                    <a href="#work" class="btn btn-primary">Projeleri İncele</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="code-snippet-window">
-                    <div class="window-header">
-                        <span class="dot close"></span>
-                        <span class="dot minimize"></span>
-                        <span class="dot maximize"></span>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <span class="badge">Merhaba, ben Talha <span class="wave-emoji">👋</span></span>
+                    <h1 class="hero-title">Sağlam Mimari.<br><span class="gradient-text">Çarpıcı Tasarım.</span></h1>
+                    <p class="hero-subtitle">
+                        Minimalist ilkelere dayanarak, sadece inanılmaz hızlı değil, aynı zamanda sezgisel olarak güzel dijital deneyimler geliştiriyorum.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn-primary">Projelerimi Gör <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn-secondary">İletişime Geç</a>
                     </div>
-                    <pre class="code-content"><code><span class="keyword">function</span> <span class="function">initiateExcellence</span>() {
-  <span class="keyword">const</span> <span class="variable">skills</span> = [
-    <span class="string">'Architecture'</span>,
-    <span class="string">'Performance'</span>,
-    <span class="string">'Aesthetics'</span>
-  ];
-  
-  <span class="keyword">return</span> skills.<span class="method">reduce</span>((acc, skill) => {
-    <span class="keyword">return</span> acc + skill;
-  }, <span class="string">'Building '</span>);
-}
-
-<span class="function">initiateExcellence</span>(); <span class="comment">// 🚀</span></code></pre>
+                </div>
+                <div class="hero-visual">
+                    <div class="abstract-shape shape-1"></div>
+                    <div class="abstract-shape shape-2"></div>
+                    <div class="abstract-shape shape-3"></div>
+                    <div class="terminal-card" id="interactive-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">talha@server:~</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-body-scroll">
+                            <div class="terminal-output" id="terminal-output">
+                                <!-- Boot sequence injected by JS -->
+                            </div>
+                            <div class="terminal-input-wrapper">
+                                <span class="term-prompt">talha@server:~$</span>
+                                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <div class="about-grid">
-                <div class="about-visual">
-                    <div class="geometric-circle"></div>
-                    <div class="geometric-rectangle"></div>
-                    <div class="geometric-square"></div>
-                </div>
-                <div class="about-content">
-                    <h2 id="whoami-title" class="section-title glitch-text"><span style="color: var(--accent);">&gt;</span> whoami</h2>
-                    <div class="section-line" style="margin: 2rem 0; width: 100px; height: 4px; background-color: var(--text-primary);"></div>
-                    <p class="about-desc">
-                        Sağlam mimari ve çarpıcı görsel tasarımın kesişim noktasına odaklanan bir yazılım mühendisiyim. Minimalist ilkelere dayanarak, sadece inanılmaz hızlı değil, aynı zamanda sezgisel olarak güzel dijital deneyimler geliştiriyorum.
-                    </p>
-                    <p class="about-desc">
-                        Ekrandaki her satır kod ve her piksel belirli bir amaca hizmet etmelidir. Karmaşa yok, taviz yok. Sadece saf performans ve zarafet.
-                    </p>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2 class="section-title">Felsefem</h2>
+                        <p class="about-text">
+                            Ekrandaki her satır kod ve her piksel belirli bir amaca hizmet etmelidir. Karmaşa yok, taviz yok. <strong>Sadece saf performans ve zarafet.</strong>
+                        </p>
+                        <p class="about-text">
+                            Bilgisayar Programcılığı eğitimim boyunca, karmaşık problemleri zarif çözümlere dönüştürme konusunda tutkumu geliştirdim. Hem backend mimarisinde sağlam temeller atıyor, hem de frontend tarafında kullanıcıları büyüleyen arayüzler tasarlıyorum.
+                        </p>
+                    </div>
+                    
+                    <div class="skills-wrapper" id="skills">
+                        <h3 class="skills-title">Teknoloji Yığınım</h3>
+                        <div class="skills-container">
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-brands fa-python"></i> Python</div>
+                                <div class="skill-details">Veri analizi, backend servisleri (Django/FastAPI) ve Tkinter ile masaüstü GUI uygulamaları geliştirme.</div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-brands fa-java"></i> Java</div>
+                                <div class="skill-details">Nesne yönelimli mimari, kurumsal backend uygulamaları ve oyun modifikasyon (Fabric API) altyapısı.</div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-solid fa-c"></i> C Programming</div>
+                                <div class="skill-details">Sistem programlama, bellek yönetimi ve yüksek performans gerektiren düşük seviye algoritmalar.</div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-solid fa-network-wired"></i> Ağ Sistemleri</div>
+                                <div class="skill-details">VLAN Yönlendirme, DHCP ve Switch Operasyonları üzerinde pratik deneyim ve altyapı yönetimi.</div>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</div>
+                                <div class="skill-details">Sızma testleri, güvenlik açığı analizi ve gerçek zamanlı tehdit izleme sistemleri geliştirme.</div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</div>
+                                <div class="skill-details">Semantik yapı, erişilebilirlik, responsive tasarımlar ve modern UI/UX prensipleri.</div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-brands fa-js"></i> JavaScript</div>
+                                <div class="skill-details">Dinamik frontend etkileşimleri, asenkron veri yönetimi ve modern kütüphanelerin kullanımı.</div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-header"><i class="fa-solid fa-database"></i> SQL / NoSQL</div>
+                                <div class="skill-details">Veritabanı tasarımı, performans optimizasyonu ve karmaşık sorguların yapılandırılması.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="projects">
-            <div class="section-header">
-                <h2 class="section-title">Projeler</h2>
-                <div class="section-line"></div>
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Öne Çıkan Projeler</h2>
+                    <p class="section-subtitle">Farklı alanlarda geliştirdiğim modern ve ölçeklenebilir çözümler.</p>
+                </div>
+                
+                <div class="project-grid">
+                    
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Siber Güvenlik Paneli" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="view-btn"><i class="fa-brands fa-github"></i> GitHub'da İncele</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Tam Yığın Web Uygulaması</span>
+                            <h3 class="project-title">Siber Güvenlik Paneli</h3>
+                            <p class="project-desc">Yüksek veri yoğunluğu ve şık görselleştirmelere sahip gerçek zamanlı tehdit izleme platformu.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Modüler Perakende Platformu" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="view-btn"><i class="fa-brands fa-github"></i> GitHub'da İncele</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">E-Ticaret Mimarisi</span>
+                            <h3 class="project-title">Modüler Perakende Platformu</h3>
+                            <p class="project-desc">%300 performans artışı sağlayan, son derece ölçeklenebilir, başsız (headless) e-ticaret çözümü.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Otomatik CI/CD Süreci" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="view-btn"><i class="fa-brands fa-github"></i> GitHub'da İncele</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Geliştirici Araçları</span>
+                            <h3 class="project-title">Otomatik CI/CD Süreci</h3>
+                            <p class="project-desc">50'den fazla mühendisten oluşan bir ekip için dağıtım sürecini kolaylaştırıyor.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Datomon Mobil Uygulaması" class="project-image" style="object-position: top;">
+                            <div class="project-overlay">
+                                <a href="#" class="view-btn"><i class="fa-brands fa-github"></i> GitHub'da İncele</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Mobil Geliştirme (Beta)</span>
+                            <h3 class="project-title">Datomon Mobil Uygulaması</h3>
+                            <p class="project-desc">Flutter ile geliştirilen kurumsal mobil uygulamanın arayüz tasarımı ve backend servisleriyle gerçek zamanlı entegrasyonu.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Fabric API Eklentileri" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="view-btn"><i class="fa-brands fa-github"></i> GitHub'da İncele</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Oyun Modifikasyonu</span>
+                            <h3 class="project-title">Fabric API Eklentileri</h3>
+                            <p class="project-desc">Java ve Fabric loader altyapısı kullanılarak özel sunucu elementlerinin programlanması ve uyumluluk stabilizasyonu.</p>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-            
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #e0e0e0, #f5f5f5);">
-                        <div class="abstract-shape shape-1"></div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Tam Yığın Web Uygulaması</span>
-                        <h3 class="project-title">Siber Güvenlik Paneli</h3>
-                        <p class="project-desc">Yüksek veri yoğunluğu ve şık görselleştirmelere sahip gerçek zamanlı tehdit izleme platformu.</p>
-                        <a href="#" class="project-link">Detayları Oku <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </article>
+        </section>
 
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #121212, #2a2a2a);">
-                        <div class="abstract-shape shape-2"></div>
+        <!-- CTA / Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-card" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                    <h2 class="contact-title">Yeni bir projeye mi başlıyorsunuz?</h2>
+                    <p class="contact-desc">Birlikte harika dijital deneyimler inşa edelim. Performans ve zarafeti projenize taşımak için benimle iletişime geçin.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:talhazgnn@gmail.com" class="btn-primary-small contact-btn">
+                            <i class="fa-solid fa-envelope"></i> talhazgnn@gmail.com
+                        </a>
+                        <div class="social-links contact-socials">
+                            <a href="https://github.com/talhazgnn" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/talha-zengin-668b15418/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="Talha_Zengin_CV.pdf" target="_blank" title="Özgeçmiş (CV)"><i class="fa-solid fa-file-pdf"></i></a>
+                        </div>
                     </div>
-                    <div class="project-info">
-                        <span class="project-category">E-Ticaret Mimarisi</span>
-                        <h3 class="project-title">Modüler Perakende Platformu</h3>
-                        <p class="project-desc">%300 performans artışı sağlayan, son derece ölçeklenebilir, başsız (headless) e-ticaret çözümü.</p>
-                        <a href="#" class="project-link">Detayları Oku <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #10B981, #0d9468);">
-                        <div class="abstract-shape shape-3"></div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Geliştirici Araçları</span>
-                        <h3 class="project-title">Otomatik CI/CD Süreci</h3>
-                        <p class="project-desc">50'den fazla mühendisten oluşan bir ekip için dağıtım sürecini kolaylaştırıyor.</p>
-                        <a href="#" class="project-link">Detayları Oku <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #0052D4, #4364F7);">
-                        <div class="abstract-shape shape-1"></div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Mobil Geliştirme (Beta)</span>
-                        <h3 class="project-title">Datomon Mobil Uygulaması</h3>
-                        <p class="project-desc">Flutter ile geliştirilen kurumsal mobil uygulamanın arayüz tasarımı ve backend servisleriyle gerçek zamanlı entegrasyonu.</p>
-                        <a href="project-datomon.html" class="project-link">Detayları Oku <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </article>
-
-                <!-- Project 5 -->
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #8E2DE2, #4A00E0);">
-                        <div class="abstract-shape shape-2"></div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Oyun Modifikasyonu</span>
-                        <h3 class="project-title">Fabric API Eklentileri</h3>
-                        <p class="project-desc">Java ve Fabric loader altyapısı kullanılarak özel sunucu elementlerinin programlanması ve uyumluluk stabilizasyonu.</p>
-                        <a href="#" class="project-link">Detayları Oku <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </article>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" id="contact">
-        <!-- Tech Stack Marquee Background -->
-        <div class="footer-marquee">
-            <div class="marquee-content">
-                <span>PYTHON</span><span class="dot">•</span>
-                <span>JAVA</span><span class="dot">•</span>
-                <span>C</span><span class="dot">•</span>
-                <span>NETWORKING</span><span class="dot">•</span>
-                <span>CYBERSECURITY</span><span class="dot">•</span>
-                <!-- Duplicate for seamless loop -->
-                <span>PYTHON</span><span class="dot">•</span>
-                <span>JAVA</span><span class="dot">•</span>
-                <span>C</span><span class="dot">•</span>
-                <span>NETWORKING</span><span class="dot">•</span>
-                <span>CYBERSECURITY</span><span class="dot">•</span>
-            </div>
-        </div>
-
-        <div class="footer-grid">
-            <div class="footer-left">
-                <h2 class="footer-title">Birlikte inşa edelim.</h2>
-                <a href="mailto:talhazgnn@gmail.com" class="footer-email hover-glitch" data-text="talhazgnn@gmail.com">talhazgnn@gmail.com</a>
-            </div>
-
-            <div class="footer-right">
-                <div class="terminal-status">
-                    <span class="status-prefix">&gt;</span> Sistem: <span class="status-online">Çevrimiçi</span> <span class="status-blink">|</span> Projeler Derleniyor = <span class="status-error" data-text="HATA">HATA</span>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-center">
+                    <div class="copyright-pill">
+                        &copy; 2026 Talha Zengin. Tüm hakları saklıdır.
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Glitch Separator & Terminal Command -->
-        <div class="footer-separator-container">
-            <div class="terminal-command">
-                <span class="cmd-user">talha@system</span>:<span class="cmd-dir">~</span>$ status --online<span class="typewriter-cursor">_</span>
-            </div>
-            <div class="glitch-separator"></div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Talha Zengin. Tüm hakları saklıdır.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/talha-zengin-668b15418/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon hover-glitch">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="https://github.com/talhazgnn" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon hover-glitch">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-                <a href="Talha_Zengin_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="CV" class="social-icon hover-glitch">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    <span class="cv-text">CV</span>
-                </a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <!-- Lenis for buttery smooth global scrolling -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <!-- Vanilla-Tilt for 3D card effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
