@@ -429,6 +429,11 @@ a {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    transition: height 0.4s ease;
+}
+
+.terminal-body.playing-snake {
+    height: 460px;
 }
 
 .terminal-body::-webkit-scrollbar {

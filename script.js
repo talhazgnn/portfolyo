@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
         termInput.disabled = true;
         termInput.blur();
         termOutput.innerHTML = ''; // Clear terminal to ensure canvas is fully visible
+        termBody.classList.add('playing-snake'); // Expand the terminal
         
         const canvasContainer = document.createElement('div');
         canvasContainer.className = 'term-line';
@@ -238,8 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const canvas = document.createElement('canvas');
         canvas.className = 'snake-canvas';
-        canvas.width = 225;
-        canvas.height = 225;
+        canvas.width = 375;
+        canvas.height = 375;
         
         canvasContainer.appendChild(canvas);
         termOutput.appendChild(canvasContainer);
@@ -247,11 +248,11 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const ctx = canvas.getContext('2d');
         const box = 15;
-        let snake = [{x: 7 * box, y: 7 * box}];
+        let snake = [{x: 12 * box, y: 12 * box}];
         let direction = "RIGHT";
         let food = {
-            x: Math.floor(Math.random() * 15) * box,
-            y: Math.floor(Math.random() * 15) * box
+            x: Math.floor(Math.random() * 25) * box,
+            y: Math.floor(Math.random() * 25) * box
         };
         let score = 0;
         let gameInterval;
@@ -274,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function endGame(isGameOver) {
             clearInterval(gameInterval);
             document.removeEventListener("keydown", keyHandler);
+            termBody.classList.remove('playing-snake'); // Shrink terminal back
             termInput.disabled = false;
             termInput.focus();
             const msg = document.createElement('div');
