@@ -230,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function launchSnake(termOutput, termInput, termBody) {
         termInput.disabled = true;
         termInput.blur();
+        termOutput.innerHTML = ''; // Clear terminal to ensure canvas is fully visible
         
         const canvasContainer = document.createElement('div');
         canvasContainer.className = 'term-line';
