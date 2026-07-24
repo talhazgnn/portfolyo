@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         termInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
+                termBody.classList.remove('playing-snake'); // Shrink terminal on any new command
                 const cmd = this.value.trim();
                 
                 // Echo command
@@ -275,7 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
         function endGame(isGameOver) {
             clearInterval(gameInterval);
             document.removeEventListener("keydown", keyHandler);
-            termBody.classList.remove('playing-snake'); // Shrink terminal back
             termInput.disabled = false;
             termInput.focus();
             const msg = document.createElement('div');
