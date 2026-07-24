@@ -918,8 +918,8 @@ footer {
     }
 
     .project-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .project-grid:not(.show-all) .project-card:nth-child(n+3) {
