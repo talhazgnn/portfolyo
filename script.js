@@ -182,4 +182,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 6. Mobile Projects Load More
+    const loadMoreBtn = document.getElementById('load-more-projects');
+    const projectGrid = document.getElementById('project-grid');
+    if (loadMoreBtn && projectGrid) {
+        loadMoreBtn.addEventListener('click', () => {
+            projectGrid.classList.add('show-all');
+        });
+    }
+
+    // 7. Mobile Skills Accordion
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        card.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                // If this is already active, close it
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                } else {
+                    // Open it
+                    this.classList.add('active');
+                }
+            }
+        });
+    });
 });
