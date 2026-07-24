@@ -467,11 +467,20 @@ a {
 }
 
 .term-success {
-    color: #22c55e;
+    color: var(--success);
 }
 
 .term-error {
-    color: #ef4444;
+    color: var(--error);
+}
+
+.snake-canvas {
+    background: #000;
+    display: block;
+    margin: 10px auto;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
 .terminal-input-wrapper {
