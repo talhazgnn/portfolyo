@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     responseLine.innerHTML = `[OK] Initializing project module...`;
                     const projLink = document.querySelector('a[href="#projects"]');
                     if(projLink) setTimeout(() => projLink.click(), 500);
-                } else if (lowerCmd === 'snake') {
+                } else if (lowerCmd === 'snake' || lowerCmd === 'retry') {
                     if (window.innerWidth <= 768) {
                         responseLine.className = 'term-line term-error';
                         responseLine.innerHTML = `[Error] Snake requires a physical keyboard. Please play on desktop.`;
@@ -237,8 +237,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const canvas = document.createElement('canvas');
         canvas.className = 'snake-canvas';
-        canvas.width = 300;
-        canvas.height = 300;
+        canvas.width = 225;
+        canvas.height = 225;
         
         canvasContainer.appendChild(canvas);
         termOutput.appendChild(canvasContainer);
@@ -246,11 +246,11 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const ctx = canvas.getContext('2d');
         const box = 15;
-        let snake = [{x: 9 * box, y: 10 * box}];
+        let snake = [{x: 7 * box, y: 7 * box}];
         let direction = "RIGHT";
         let food = {
-            x: Math.floor(Math.random() * 19 + 1) * box,
-            y: Math.floor(Math.random() * 19 + 1) * box
+            x: Math.floor(Math.random() * 15) * box,
+            y: Math.floor(Math.random() * 15) * box
         };
         let score = 0;
         let gameInterval;
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
             termInput.focus();
             const msg = document.createElement('div');
             msg.className = 'term-line';
-            msg.innerHTML = isGameOver ? `<span class="term-error">Game Over! Final Score: ${score}</span>` : `<span class="term-success">Game quit. Final Score: ${score}</span>`;
+            msg.innerHTML = isGameOver ? `<span class="term-error">Game Over! Final Score: ${score}. Type 'retry' to play again.</span>` : `<span class="term-success">Game quit. Final Score: ${score}</span>`;
             termOutput.appendChild(msg);
             termBody.scrollTop = termBody.scrollHeight;
         }
