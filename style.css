@@ -892,7 +892,11 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
     .nav-links {
         display: none;
     }
@@ -911,6 +915,11 @@ footer {
 
     .contact-title {
         font-size: 1.8rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 
     .project-grid:not(.show-all) .project-card:nth-child(n+3) {
