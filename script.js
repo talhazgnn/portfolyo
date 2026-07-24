@@ -131,6 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
         termInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 termBody.classList.remove('playing-snake'); // Shrink terminal on any new command
+                // Remove old snake canvases from history to save space and fix scroll issues
+                document.querySelectorAll('.snake-canvas').forEach(c => c.parentElement.remove());
+                
                 const cmd = this.value.trim();
                 
                 // Echo command
@@ -257,11 +260,19 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         let score = 0;
         let gameInterval;
+        let gameStarted = false;
         
         const keyHandler = function(e) {
-            if([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+            if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
                 e.preventDefault();
             }
+            if(!gameStarted && e.keyCode == 32) {
+                gameStarted = true;
+                gameInterval = setInterval(draw, 100);
+                return;
+            }
+            if(!gameStarted) return;
+
             if(e.keyCode == 37 && direction != "RIGHT") direction = "LEFT";
             else if(e.keyCode == 38 && direction != "DOWN") direction = "UP";
             else if(e.keyCode == 39 && direction != "LEFT") direction = "RIGHT";
@@ -338,6 +349,19 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.fillText("Score: " + score + " | Press Q to quit", 10, 20);
         }
         
-        gameInterval = setInterval(draw, 100);
+        // Draw initial state
+        ctx.fillStyle = "#000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#00f0ff";
+        ctx.fillRect(snake[0].x, snake[0].y, box, box);
+        ctx.strokeStyle = "#000";
+        ctx.strokeRect(snake[0].x, snake[0].y, box, box);
+        ctx.fillStyle = "#ef4444";
+        ctx.fillRect(food.x, food.y, box, box);
+        ctx.fillStyle = "white";
+        ctx.font = "16px monospace";
+        ctx.textAlign = "center";
+        ctx.fillText("Press SPACE to start", canvas.width/2, canvas.height/2);
+        ctx.textAlign = "left"; // reset
     }
 });
