@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (lowerCmd === 'help') {
                     responseLine.innerHTML = `Available commands:<br>&nbsp;&nbsp;<b>about</b>&nbsp;&nbsp;&nbsp;&nbsp;Display developer info<br>&nbsp;&nbsp;<b>skills</b>&nbsp;&nbsp;&nbsp;List core competencies<br>&nbsp;&nbsp;<b>projects</b>&nbsp;Navigate to projects module<br>&nbsp;&nbsp;<b>snake</b>&nbsp;&nbsp;&nbsp;&nbsp;Play terminal snake game<br>&nbsp;&nbsp;<b>clear</b>&nbsp;&nbsp;&nbsp;&nbsp;Clear terminal output`;
                 } else if (lowerCmd === 'about') {
-                    responseLine.innerHTML = `> Talha Zengin | Software Engineer<br>> Focus: Robust architecture & striking design.<br>> Mission: Delivering zero-compromise digital experiences.`;
+                    responseLine.innerHTML = `> Talha Zengin | Computer Programmer<br>> Focus: Robust architecture & striking design.<br>> Mission: Delivering zero-compromise digital experiences.`;
                 } else if (lowerCmd === 'skills') {
                     responseLine.innerHTML = `[+] Python (Backend & GUI)<br>[+] Java, C Programming<br>[+] Network Systems (VLAN, DHCP)<br>[+] Cybersecurity & Pentesting<br>[+] HTML5, CSS3, JS, SQL/NoSQL`;
                 } else if (lowerCmd === 'projects') {
