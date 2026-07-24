@@ -188,7 +188,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectGrid = document.getElementById('project-grid');
     if (loadMoreBtn && projectGrid) {
         loadMoreBtn.addEventListener('click', () => {
-            projectGrid.classList.add('show-all');
+            projectGrid.classList.toggle('show-all');
+            
+            if (projectGrid.classList.contains('show-all')) {
+                loadMoreBtn.innerHTML = 'Daha azını göster <i class="fa-solid fa-chevron-up" style="margin-left: 5px;"></i>';
+            } else {
+                loadMoreBtn.innerHTML = 'Daha fazlasını görmek için tıkla <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i>';
+                
+                // Scroll back up slightly so the user doesn't lose their place
+                const y = projectGrid.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
         });
     }
 
